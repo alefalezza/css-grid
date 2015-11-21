@@ -8,7 +8,7 @@ Per ciascuna griglia è possibile personalizzare il numero di colonne e la spazi
 
 ## Utilizzo:
 
-    .make-grid( class{string}, colonne{int}, @breakopint{px}, margin{%}, padding{% | px} );
+    .make-grid( class{string}, colonne{int}, @breakpoint{px}, margin{%}, padding{% | px} );
 
 ### Parametri:
 
