@@ -44,10 +44,11 @@
 // -----------------------------------------------------
 
 /* Clearfix */
-.clearfix () {
+.clearfix {
 	&:before,
 	&:after {
-		content: '';
+		content: ' ';
+		visibility: hidden;
 		display: table;
 	}
 	&:after {
@@ -57,17 +58,17 @@
 }
 
 // Genera la griglia
-.make-grid (@class, @columns, @pad: 0, @mar: 0) {
-	/* Griglia: utilizza grid.less */
+.make-grid (@class, @columns, @breakpoint, @mar: 0, @pad: 0) {
+	/* Grid.less */
 	.make-base (@class);	
 	.row.@{class} {
-		.col-@{columns},
-		.col-full {
-			width: 100% - (@mar * 2);
-			.make-margin (@mar);
+		.col-@{columns} {
 			clear: both;
+			width: auto;
+			.make-margin (@mar);
 		}
-		.make-cols (@columns, @columns, @pad, @mar);
+		.make-cols (@columns, @columns - 1, @mar, @pad);
+		.make-stack (@breakpoint, @columns - 1, @mar, @pad);
 	}
 }
 
@@ -92,6 +93,34 @@
 
 	// next
 	.make-cols (@total, @n - 1, @mar, @pad);
+}
+
+.make-stack-cols (@total, @n, @mar: 0, @pad: 0) when (@n > 0) {
+
+	// Colonna
+	.col-@{n} {
+		float: none;
+		width: 100% - (@mar * 2);
+		.make-margin (@mar);
+		.make-padding (@pad);
+	}
+
+	// Spaziatori a sinistra e a destra
+	.push-@{n} when (@n < @total) {
+		margin-left: 0;
+	}
+	&.right .push-@{n} when (@n < @total) {
+		margin-right: 0;
+	}
+
+	// next
+	.make-stack-cols (@total, @n - 1, @mar, @pad);
+}
+
+.make-stack (@breakpoint, @columns, @mar, @pad) {
+	@media (max-width: @breakpoint) {
+		.make-stack-cols (@columns, @columns, @mar, @pad);
+	}
 }
 
 // Riga + .center
