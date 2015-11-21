@@ -8,6 +8,9 @@ body {
 .row {
 	max-width: 800px;
 	margin-bottom: 10px;
+	.row {
+		margin-bottom: 0;
+	}
 }
 
 .row>div {
@@ -15,6 +18,10 @@ body {
 	padding: 8px;
 	text-align: center;
 	border-bottom: 1px solid #fff;
+	.row>div {
+		background: #fff;
+		border-bottom: 1px solid #eee;
+	}
 }
 
 .make-grid(test-3, 3, 700px, 0.5%, 7px);

@@ -19,11 +19,18 @@ body {
   max-width: 800px;
   margin-bottom: 10px;
 }
+.row .row {
+  margin-bottom: 0;
+}
 .row > div {
   background: #eee;
   padding: 8px;
   text-align: center;
   border-bottom: 1px solid #fff;
+}
+.row > div .row > div {
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 /* Grid.less */
 .row.test-3 {
@@ -121,10 +128,12 @@ body {
     padding-right: 7px;
   }
   .row.test-3 .push-1 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-3.right .push-1 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
 }
 /* Grid.less */
@@ -269,10 +278,12 @@ body {
     padding-right: 7px;
   }
   .row.test-5 .push-3 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-5.right .push-3 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-5 .col-2 {
     float: none;
@@ -285,10 +296,12 @@ body {
     padding-right: 7px;
   }
   .row.test-5 .push-2 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-5.right .push-2 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-5 .col-1 {
     float: none;
@@ -301,10 +314,12 @@ body {
     padding-right: 7px;
   }
   .row.test-5 .push-1 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-5.right .push-1 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
 }
 /* Grid.less */
@@ -472,10 +487,12 @@ body {
     padding-right: 7px;
   }
   .row.test-6 .push-4 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6.right .push-4 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6 .col-3 {
     float: none;
@@ -488,10 +505,12 @@ body {
     padding-right: 7px;
   }
   .row.test-6 .push-3 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6.right .push-3 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6 .col-2 {
     float: none;
@@ -504,10 +523,12 @@ body {
     padding-right: 7px;
   }
   .row.test-6 .push-2 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6.right .push-2 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6 .col-1 {
     float: none;
@@ -520,10 +541,12 @@ body {
     padding-right: 7px;
   }
   .row.test-6 .push-1 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-6.right .push-1 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
 }
 /* Grid.less */
@@ -829,10 +852,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-10 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-10 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-9 {
     float: none;
@@ -845,10 +870,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-9 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-9 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-8 {
     float: none;
@@ -861,10 +888,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-8 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-8 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-7 {
     float: none;
@@ -877,10 +906,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-7 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-7 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-6 {
     float: none;
@@ -893,10 +924,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-6 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-6 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-5 {
     float: none;
@@ -909,10 +942,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-5 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-5 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-4 {
     float: none;
@@ -925,10 +960,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-4 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-4 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-3 {
     float: none;
@@ -941,10 +978,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-3 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-3 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-2 {
     float: none;
@@ -957,10 +996,12 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-2 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-2 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12 .col-1 {
     float: none;
@@ -973,9 +1014,11 @@ body {
     padding-right: 7px;
   }
   .row.test-12 .push-1 {
-    margin-left: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
   .row.test-12.right .push-1 {
-    margin-right: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
 }
