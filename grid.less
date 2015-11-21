@@ -4,11 +4,12 @@
 // ogni griglia è contraddistinta da una classe che funge da namespace.
 // 
 // Utilizzo:
-// .make-grid( class{string}, colonne{int}, margin{%}, padding{% | px} );
+// .make-grid( class{string}, colonne{int}, breakpoint{px}, margin{%}, padding{% | px} );
 // 
 // Parametri:
 // - class: stringa che identifica la classe della riga
 // - colonne: intero, è il numero di colonne per la riga con classe .row.@class
+// - breakpoint: rappresenta il valore della larghezza dello schermo in px, al di sotto del quale le colonne vengono impilate (versione mobile)
 // - margin: se vuoi che le colonne abbiano un margin, impostalo qui (in percentuale!!). Default 0
 // - padding: se vuoi che le colonne abbiano un padding, impostalo qui. Default 0
 // 
@@ -107,10 +108,10 @@
 
 	// Spaziatori a sinistra e a destra
 	.push-@{n} when (@n < @total) {
-		margin-left: 0;
+		.make-margin (@mar);
 	}
 	&.right .push-@{n} when (@n < @total) {
-		margin-right: 0;
+		.make-margin (@mar);
 	}
 
 	// next
