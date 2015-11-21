@@ -1,0 +1,26 @@
+@import '../grid.less';
+
+body {
+	font-family: sans-serif;
+	font-size: 0.8em;
+}
+
+.row {
+	max-width: 800px;
+	margin-bottom: 10px;
+}
+
+.row>div {
+	background: #eee;
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+}
+
+.make-grid(test-3, 3, 700px, 0.5%, 7px);
+
+.make-grid(test-5, 5, 700px, 0.5%, 7px);
+
+.make-grid(test-6, 6, 700px, 0.5%, 7px);
+
+.make-grid(test-12, 12, 700px, 0.5%, 7px);
