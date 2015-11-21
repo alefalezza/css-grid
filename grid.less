@@ -1,0 +1,143 @@
+// Generatore della griglia
+// 
+// Genera una o più griglie, con caratteristiche diverse per numero di colonne e spaziatura, 
+// ogni griglia è contraddistinta da una classe che funge da namespace.
+// 
+// Utilizzo:
+// .make-grid( class{string}, colonne{int}, margin{%}, padding{% | px} );
+// 
+// Parametri:
+// - class: stringa che identifica la classe della riga
+// - colonne: intero, è il numero di colonne per la riga con classe .row.@class
+// - margin: se vuoi che le colonne abbiano un margin, impostalo qui (in percentuale!!). Default 0
+// - padding: se vuoi che le colonne abbiano un padding, impostalo qui. Default 0
+// 
+// --- ---
+// 
+// Genera le seguenti classi:
+// .row: definisce una riga
+// .row.center: riga centrata
+// .col-{n}: definisce una colonna di dimensione {n}
+// .col-{n}.right: fa flottare la colonna sulla destra
+// .col-{n}.pad: utilizza il padding impostato nella griglia
+// .push-{n}: sposta la colonna di una misura {n} (viene applicato specchiato per le colonne flottanti a destra)
+// .center: centra una riga o una colonna (elimina il float)
+// .clearfix: da applicare ai contenitori di elementi flottanti per correggere il dimensionamento
+// 
+// --- ---
+// 
+// Il codice html per utilizzare la griglia è del tipo:
+// 	<div class="row {class}">
+// 		<div class="col-{n}">
+// 			{n} Rappresenta la grandezza della colonna, da 1 a n, in base a quante colonne sono impostate in {class}
+// 		</div>
+// 		<div class="col-{n} push-{m}">
+// 			Qui la colonna è spostata di {m} rispetto alla sua posizione normale
+// 		</div>
+// 	</div>
+// 
+
+
+
+// -----------------------------------------------------
+//  Non modificare qui sotto
+// -----------------------------------------------------
+
+/* Clearfix */
+.clearfix () {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	*zoom: 1;
+}
+
+// Genera la griglia
+.make-grid (@class, @columns, @pad: 0, @mar: 0) {
+	/* Griglia: utilizza grid.less */
+	.make-base (@class);	
+	.row.@{class} {
+		.col-@{columns},
+		.col-full {
+			width: 100% - (@mar * 2);
+			.make-margin (@mar);
+			clear: both;
+		}
+		.make-cols (@columns, @columns, @pad, @mar);
+	}
+}
+
+// Genera le colonne e gli spaziatori
+.make-cols (@total, @n, @mar: 0, @pad: 0) when (@n > 0) {
+
+	// Colonna
+	.col-@{n} {
+		.col ();
+		width: (100% / @total * @n) - (@mar * 2);
+		.make-margin (@mar);
+		.make-padding (@pad);
+	}
+
+	// Spaziatori a sinistra e a destra
+	.push-@{n} when (@n < @total) {
+		margin-left: (100% / @total * @n) + @mar;
+	}
+	&.right .push-@{n} when (@n < @total) {
+		margin-right: (100% / @total * @n) + @mar;
+	}
+
+	// next
+	.make-cols (@total, @n - 1, @mar, @pad);
+}
+
+// Riga + .center
+.make-base (@class) {
+	.row.@{class} {
+		.clearfix ();
+		&.center,
+		.center {
+			float: none !important;
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+// Colonna
+.col () {
+	float: left;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	min-height: 1px;
+	&.right {
+		float: right;
+	}
+}
+
+// Margin
+.make-margin (@mar) when (ispercentage(@mar)) {
+	margin-left: @mar;
+	margin-right: @mar;
+}
+
+// Padding
+.make-padding (@pad) when (ispixel(@pad)) {
+	&.pad {
+		padding-left: @pad;
+		padding-right: @pad;
+	}
+}
+.make-padding (@pad) when (ispercentage(@pad)) {
+	&.pad {
+		padding-left: @pad;
+		padding-right: @pad;
+	}
+}
