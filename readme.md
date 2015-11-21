@@ -15,14 +15,15 @@ Parametri:
 
 
 Genera le seguenti classi:
-**.row**: definisce una riga
-**.row.center**: riga centrata
-**.col-{n}**: definisce una colonna di dimensione {n}
-**.col-{n}.right**: fa flottare la colonna sulla destra
-**.col-{n}.pad**: utilizza il padding impostato nella griglia
-**.push-{n}**: sposta la colonna di una misura {n} (viene applicato specchiato per le colonne flottanti a destra)
-**.center**: centra una riga o una colonna (elimina il float)
-**.clearfix**: da applicare ai contenitori di elementi flottanti per correggere il dimensionamento
+
+**.row**: definisce una riga  
+**.row.center**: riga centrata  
+**.col-{n}**: definisce una colonna di dimensione {n}  
+**.col-{n}.right**: fa flottare la colonna sulla destra  
+**.col-{n}.pad**: utilizza il padding impostato nella griglia  
+**.push-{n}**: sposta la colonna di una misura {n} (viene applicato specchiato per le colonne flottanti a destra)  
+**.center**: centra una riga o una colonna (elimina il float)  
+**.clearfix**: da applicare ai contenitori di elementi flottanti per correggere il dimensionamento  
 
 
 Il codice html per utilizzare la griglia è del tipo:
