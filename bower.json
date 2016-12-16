@@ -1,0 +1,23 @@
+{
+  "name": "css-grid",
+  "homepage": "https://github.com/alefalezza/css-grid",
+  "authors": [
+    "Alessandro Falezza <alessandro.falezza@rdcom.it>"
+  ],
+  "description": "less based css grid with support for flexbox",
+  "main": "grid.less",
+  "keywords": [
+    "css",
+    "less",
+    "grid",
+    "flexbox"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
