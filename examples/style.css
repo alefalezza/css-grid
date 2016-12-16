@@ -15,6 +15,13 @@ body {
   font-family: sans-serif;
   font-size: 0.8em;
 }
+h2 {
+  text-align: center;
+  margin: 60px 0 10px 0;
+}
+h3 {
+  text-align: center;
+}
 .row {
   max-width: 800px;
   margin-bottom: 10px;
@@ -117,6 +124,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-3 .col-2.right {
+    float: none;
+  }
   .row.test-3 .col-1 {
     float: none;
     width: 99%;
@@ -126,6 +136,9 @@ body {
   .row.test-3 .col-1.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-3 .col-1.right {
+    float: none;
   }
   .row.test-3 .push-1 {
     margin-left: 0.5%;
@@ -267,6 +280,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-5 .col-4.right {
+    float: none;
+  }
   .row.test-5 .col-3 {
     float: none;
     width: 99%;
@@ -276,6 +292,9 @@ body {
   .row.test-5 .col-3.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-5 .col-3.right {
+    float: none;
   }
   .row.test-5 .push-3 {
     margin-left: 0.5%;
@@ -295,6 +314,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-5 .col-2.right {
+    float: none;
+  }
   .row.test-5 .push-2 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -312,6 +334,9 @@ body {
   .row.test-5 .col-1.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-5 .col-1.right {
+    float: none;
   }
   .row.test-5 .push-1 {
     margin-left: 0.5%;
@@ -476,6 +501,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-6 .col-5.right {
+    float: none;
+  }
   .row.test-6 .col-4 {
     float: none;
     width: 99%;
@@ -485,6 +513,9 @@ body {
   .row.test-6 .col-4.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-6 .col-4.right {
+    float: none;
   }
   .row.test-6 .push-4 {
     margin-left: 0.5%;
@@ -504,6 +535,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-6 .col-3.right {
+    float: none;
+  }
   .row.test-6 .push-3 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -522,6 +556,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-6 .col-2.right {
+    float: none;
+  }
   .row.test-6 .push-2 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -539,6 +576,9 @@ body {
   .row.test-6 .col-1.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-6 .col-1.right {
+    float: none;
   }
   .row.test-6 .push-1 {
     margin-left: 0.5%;
@@ -841,6 +881,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-12 .col-11.right {
+    float: none;
+  }
   .row.test-12 .col-10 {
     float: none;
     width: 99%;
@@ -850,6 +893,9 @@ body {
   .row.test-12 .col-10.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-12 .col-10.right {
+    float: none;
   }
   .row.test-12 .push-10 {
     margin-left: 0.5%;
@@ -869,6 +915,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-12 .col-9.right {
+    float: none;
+  }
   .row.test-12 .push-9 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -886,6 +935,9 @@ body {
   .row.test-12 .col-8.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-12 .col-8.right {
+    float: none;
   }
   .row.test-12 .push-8 {
     margin-left: 0.5%;
@@ -905,6 +957,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-12 .col-7.right {
+    float: none;
+  }
   .row.test-12 .push-7 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -922,6 +977,9 @@ body {
   .row.test-12 .col-6.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-12 .col-6.right {
+    float: none;
   }
   .row.test-12 .push-6 {
     margin-left: 0.5%;
@@ -941,6 +999,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-12 .col-5.right {
+    float: none;
+  }
   .row.test-12 .push-5 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -958,6 +1019,9 @@ body {
   .row.test-12 .col-4.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-12 .col-4.right {
+    float: none;
   }
   .row.test-12 .push-4 {
     margin-left: 0.5%;
@@ -977,6 +1041,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-12 .col-3.right {
+    float: none;
+  }
   .row.test-12 .push-3 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -994,6 +1061,9 @@ body {
   .row.test-12 .col-2.pad {
     padding-left: 7px;
     padding-right: 7px;
+  }
+  .row.test-12 .col-2.right {
+    float: none;
   }
   .row.test-12 .push-2 {
     margin-left: 0.5%;
@@ -1013,6 +1083,9 @@ body {
     padding-left: 7px;
     padding-right: 7px;
   }
+  .row.test-12 .col-1.right {
+    float: none;
+  }
   .row.test-12 .push-1 {
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -1020,5 +1093,81 @@ body {
   .row.test-12.right .push-1 {
     margin-left: 0.5%;
     margin-right: 0.5%;
+  }
+}
+.row.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  -webkit-flex-wrap: row wrap;
+  flex-wrap: wrap;
+}
+.row.flex.center,
+.row.flex .center {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.row.flex .col {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+.row.flex .col.pad {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.row.flex .col.size-1 {
+  flex-grow: 1;
+}
+.row.flex .col.size-2 {
+  flex-grow: 2;
+}
+.row.flex .col.size-3 {
+  flex-grow: 3;
+}
+.row.flex .col.size-4 {
+  flex-grow: 4;
+}
+.row.flex .col.size-5 {
+  flex-grow: 5;
+}
+.row.flex.vertical-top {
+  align-items: flex-start;
+}
+.row.flex.vertical-center {
+  align-items: center;
+}
+.row.flex.vertical-bottom {
+  align-items: flex-end;
+}
+.row.flex.equal-height {
+  align-items: stretch;
+}
+.row.flex.reverse {
+  flex-direction: row-reverse;
+}
+.row.flex img {
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  .row.flex {
+    flex-direction: column;
+  }
+  .row.flex.vertical-top,
+  .row.flex.vertical-center,
+  .row.flex.vertical-bottom,
+  .row.flex.equal-height {
+    align-items: initial;
+  }
+  .row.flex.reverse {
+    flex-direction: column-reverse;
   }
 }

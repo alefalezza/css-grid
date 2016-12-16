@@ -36,8 +36,40 @@
 // 			Qui la colonna è spostata di {m} rispetto alla sua posizione normale
 // 		</div>
 // 	</div>
-// 
+//  
+// Griglia flexbox
 
+// Utilizzo:
+// .make-grid-flex( class{string}, breakpoint{px}, margin{%}, padding{% | px} )
+// (è identico alla griglia normale, ma senza il parametro che indicail numero di colonne)
+
+// Parametri:
+// - class: stringa che identifica la classe della riga
+// - breakpoint: rappresenta il valore della larghezza dello schermo in px, al di sotto del quale le colonne vengono impilate (versione mobile)
+// - margin: se vuoi che le colonne abbiano un margin, impostalo qui (in percentuale!!). Default 0
+// - padding: se vuoi che le colonne abbiano un padding, impostalo qui. Default 0
+// 
+// 
+// --- ---
+// 
+// Genera le seguenti classi:
+// .row: definisce una riga
+// .row.center: riga centrata
+// .row.reverse: ordina le colonne in ordine inverso
+// .row.vertical-top: allinea le colonne in alto
+// .row.vertical-bottom: allinea le colonne in basso
+// .row.vertical-center: allinea le colonne al centro
+// .row.equal-height: rende uguale l'altezza di tutte le colonne della riga
+// .col: definisce una colonna
+// .col.pad: utilizza il padding impostato nella griglia
+// .col.size-1,
+// 	.col.size-2,
+// 	.col.size-3,
+// 	.col.size-4,
+// 	.col.size-5: genera colonne con larghezza proporzionale
+// .center: centra una riga o una colonna
+// 
+// --- ---
 
 
 // -----------------------------------------------------
@@ -73,6 +105,89 @@
 	}
 }
 
+.make-grid-flex (@class, @breakpoint, @mar: 0, @pad: 0) {
+	.row.@{class} {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		justify-content: space-around;
+
+		flex-direction: row;
+
+		-webkit-flex-wrap: row wrap;
+		flex-wrap: wrap;
+
+
+		&.center,
+		.center {
+			float: none !important;
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+		.col {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			.make-margin(@mar);
+			.make-padding(@pad);
+			&.size-1 {
+				flex-grow: 1;
+			}
+			&.size-2 {
+				flex-grow: 2;
+			}
+			&.size-3 {
+				flex-grow: 3;
+			}
+			&.size-4 {
+				flex-grow: 4;
+			}
+			&.size-5 {
+				flex-grow: 5;
+			}
+		}
+
+		// vertical align		
+		&.vertical-top {
+			align-items: flex-start;
+		}
+		&.vertical-center {
+			align-items: center;
+		}
+		&.vertical-bottom {
+			align-items: flex-end;
+		}
+		&.equal-height {
+			align-items: stretch;
+		}
+
+		// order
+		&.reverse {
+			flex-direction: row-reverse;
+		}
+
+		.img();
+	}
+	@media (max-width: @breakpoint) {
+		.row.@{class} {
+			flex-direction: column;
+			&.vertical-top,
+			&.vertical-center,
+			&.vertical-bottom,
+			&.equal-height {
+				align-items: initial;
+			}
+			&.reverse {
+				flex-direction: column-reverse;
+			}
+		}
+	}
+}
+
 // Genera le colonne e gli spaziatori
 .make-cols (@total, @n, @mar: 0, @pad: 0) when (@n > 0) {
 
@@ -80,8 +195,8 @@
 	.col-@{n} {
 		.col ();
 		width: (100% / @total * @n) - (@mar * 2);
-		.make-margin (@mar);
-		.make-padding (@pad);
+		.make-margin(@mar);
+		.make-padding(@pad);
 	}
 
 	// Spaziatori a sinistra e a destra
@@ -93,7 +208,7 @@
 	}
 
 	// next
-	.make-cols (@total, @n - 1, @mar, @pad);
+	.make-cols(@total, @n - 1, @mar, @pad);
 }
 
 .make-stack-cols (@total, @n, @mar: 0, @pad: 0) when (@n > 0) {
@@ -102,8 +217,8 @@
 	.col-@{n} {
 		float: none;
 		width: 100% - (@mar * 2);
-		.make-margin (@mar);
-		.make-padding (@pad);
+		.make-margin(@mar);
+		.make-padding(@pad);
 		&.right {
 			float: none;
 		}
@@ -118,41 +233,51 @@
 	}
 
 	// next
-	.make-stack-cols (@total, @n - 1, @mar, @pad);
+	.make-stack-cols(@total, @n - 1, @mar, @pad);
 }
 
 .make-stack (@breakpoint, @columns, @mar, @pad) {
 	@media (max-width: @breakpoint) {
-		.make-stack-cols (@columns, @columns, @mar, @pad);
+		.make-stack-cols(@columns, @columns, @mar, @pad);
 	}
 }
 
 // Riga + .center
 .make-base (@class) {
 	.row.@{class} {
-		.clearfix ();
+		.clearfix();
 		&.center,
 		.center {
 			float: none !important;
 			margin-left: auto !important;
 			margin-right: auto !important;
 		}
-		img {
-			max-width: 100%;
-		}
+		.img();
 	}
 }
 
 // Colonna
 .col () {
 	float: left;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
+	.box-sizing();
 	min-height: 1px;
 	&.right {
 		float: right;
 	}
+}
+
+// Box sizing
+.box-sizing () {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+// Image max width
+.img () {
+	img {
+			max-width: 100%;
+		}
 }
 
 // Margin
